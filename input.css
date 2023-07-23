@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#hero{
+    background-image: url('../img/deljo2.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+
+   
+
+}
+
+@media(max-width: 576px){
+    #hero{
+        background-image: url('../img/deljo2.png');
+        background-position: center;
+        
+      
+    }
+}
+#m{
+    background-image: url('../img/9.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top:-10px;
+    background-position: center;
+    mix-blend-mode: lighten;
+    opacity:75%
+   
+
+}
+.gr {
+    --angle: 0deg;
+   
+    border: solid;
+    border-image: linear-gradient(var(--angle), #fff, #090909, #b1b1b1) 1;
+    animation: 15s rotate linear infinite;
+  }
+  .gr:hover {
+    --angle: 0deg;
+   
+    border: solid;
+    border-image: linear-gradient(var(--angle), #fff, #090909, #b1b1b1) 1;
+    animation: 0.01s rotate linear infinite;
+  }
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  .grr {
+    --angle: 0deg;
+   
+    border-top: solid;
+    border-image: linear-gradient(var(--angle), #fff, #090909, #b1b1b1) 1;
+    animation: 15s rotate linear infinite;
+  }
+
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  /* humberger */
+  .humberger{
+    cursor: pointer;
+    width:24px;
+    height: 24px;
+    transition:all 0.25s;
+    position:relative;
+
+  }
+  .humberger-top, .humberger-middle, .humberger-bottom{
+    width:24px;
+    height: 2px;
+    position:absolute;
+    top:0;
+    left:0 ;
+    background:#fff;
+    transform: rotate(0);
+    transition:all 0.5s;
+  }
+  .humberger-middle{
+    transform: translatey(7px);
+  }
+  .humberger-bottom{
+    transform: translatey(14px);
+  }
+
+  .open{
+    transform: rotate(90deg);
+  }
+  .open .humberger-top{
+    transform: rotate(45deg) translatey(6px) translatex(6px);
+  }
+  .open .humberger-middle{
+  display:none
+  }
+  .open .humberger-bottom{
+    transform: rotate(-45deg) translatey(6px) translatex(-6px);
+  }
